@@ -86,6 +86,10 @@ def main(argv):
 			# weights
 			dims = net.params[pr][0].data.shape
 			weightSize = np.prod(dims)
+
+			print dims
+			print weightSize
+
 			if transFlag:
 				net.params[pr][0].data[...] = np.reshape(netWeights[count:count+weightSize], (dims[1], dims[0])).transpose()
 			else:
